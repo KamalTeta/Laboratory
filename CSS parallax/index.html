@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HTML 5 Boilerplate</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		.wrapper {
+			height: 100vh;
+			overflow-y: auto;
+			overflow-x: hidden;
+			perspective: 10px;
+
+		}
+		.fullBlock {
+			width: 100vw;
+			min-height: 100vh;
+		}
+		h1, p {
+			padding: 50px;
+		}
+		.parallax {
+			position: relative;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100%;
+			transform-style: preserve-3d;
+			z-index: -1;
+
+		}
+		.parallax h1, img, div{
+			position: absolute;
+			height: 100%;
+			width: 100%;
+		}
+		.parallax h1 {
+			transform: translateZ(-10px) scale(2);
+		}
+		.parallax img{
+			transform: translateZ(-20px) scale(4);
+		}
+		.parallax div{
+			transform: translateZ(-40px) scale(8);
+		}
+	</style>
+  </head>
+  <body>
+	<div class="wrapper">
+		<div class="fullBlock parallax">
+			<div style="background-image: linear-gradient(rgba(255, 255, 255, 0.33), rgba(255, 255, 255, 0.33)),url('media/andre-masek-rInHz1VGwvc-unsplash_720x1080.png');"></div>
+			<h1>Website</h1>
+			<img src="media/1.png" alt="">
+		</div>
+		<div class="fullBlock" style="background:navy;">
+			<h1>Website</h1>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		</div>
+		<div class="fullBlock">
+			<h1>Website</h1>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		</div>
+		<div class="fullBlock">
+			<h1>Website</h1>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		</div>
+	</div>
+	<script>
+		console.log("Hello cool cats and kittens");
+	</script>
+  </body>
+</html>

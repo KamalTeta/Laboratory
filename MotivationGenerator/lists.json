@@ -1,0 +1,37 @@
+{
+    "Sayings": [
+        { "quote":"Opportunities don't happen, you create them", "author":"few" },
+        { "quote":"When we strive to become better than we are, everything around us becomes better too.", "author":"wef" },
+        { "quote":"Alone we can do so little, together we can do so much.", "author":"fwe" },
+        { "quote":"Either you run the day or the day runs you.", "author":"wef" },
+        { "quote":"Keep your eyes on the stars, and your feet on the ground.", "author":"wef" },
+        { "quote":"Inspiration does exist, but it must find you working.", "author":"few" }        
+    ],
+    "Pictures": [
+        "media/adrian-enache-0IsVTerMwzQ-unsplash_1620x1080.png",
+        "media/adrian-enache-eTf-sA4Uv_U-unsplash_720x1080.png",
+        "media/anastasia-taioglou-CTivHyiTbFw-unsplash_1626x1080.png",
+        "media/andre-masek-rInHz1VGwvc-unsplash_720x1080.png",
+        "media/annie-spratt-REOlPVGPm3E-unsplash_724x1080.png",
+        "media/chris-leipelt-x4TffRkGHYM-unsplash_720x1080.png",
+        "media/click-and-learn-photography-fgWD1iUavWM-unsplash_1650x1080.png",
+        "media/dylan-leagh-7TjeBRFGAQY-unsplash_720x1080.png",
+        "media/federico-bottos-Z3NceSeZqgI-unsplash_720x1080.png",
+        "media/gatis-marcinkevics-a5uptAdUmjE-unsplash_662x1080.png",
+        "media/ik-blunt-0Lvuf0SyUt8-unsplash_1920x1080.png",
+        "media/john-dancy-LMIKbrFA5V4-unsplash_1920x1080.png",
+        "media/kay-hanlie-MLoTNrJ8HQs-unsplash_720x1080.png",
+        "media/marita-kavelashvili-ugnrXk1129g-unsplash_1626x1080.png",
+        "media/martin-bennie-dXFbqN4EOEg-unsplash_1620x1080.png",
+        "media/martin-bennie-II-TjpanlgQ-unsplash_1620x1080.png",
+        "media/martin-bennie-MA74SQlJsxY-unsplash(1)_823x1080.png",
+        "media/martin-bennie-oJxoDn1NfZQ-unsplash_1620x1080.png",
+        "media/martin-bennie-OUO4jh9I_no-unsplash_1413x1080.png",
+        "media/martin-bennie-ry94MWqAE0c-unsplash_1620x1080.png",
+        "media/mat-hayward-StJjho04DV8-unsplash_720x1080.png",
+        "media/matt-hardy-6ArTTluciuA-unsplash_1620x1080.png",
+        "media/mos-design-BdkTqXjG9RE-unsplash_1620x1080.png",
+        "media/samuel-branch-f6hhe7I0ai8-unsplash_720x1080.png",
+        "media/sebastian-unrau-sp-p7uuT0tw-unsplash_1620x1080.png"
+    ]
+}
