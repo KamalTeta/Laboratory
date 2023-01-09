@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <nav style="position: fixed;right:100px;">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">Page 1</a></li>
+            <li><a href="page2.html">Page 2</a></li>
+        </ul>
+    </nav>
+    <div style="height: 4000px;border:5px black;">
+        <h1>HALLOW</h1>
+    </div>
+    <script>
+        history.scrollRestoration = "manual" 
+        
+        var urlprevious = sessionStorage.getItem("url-previous");
+        var urljustLeft = sessionStorage.getItem("url-justLeft");
+        var positionprevious= sessionStorage.getItem("position-previous");
+        var positionjustLeft = sessionStorage.getItem("position-justLeft");
+
+        //console.log("url-previous : " + urlprevious);
+        //console.log("url-justLeft : " + urljustLeft);
+        //console.log("position-previous : " + positionprevious);
+        //console.log("position-justLeft : " + positionjustLeft);
+
+        if (urlprevious == window.location.href) {
+            window.scrollTo({
+                top: positionprevious,
+                left: 0,
+                behavior: 'smooth'
+            });
+        }
+
+
+
+        window.addEventListener("beforeunload", function(event) {
+            if(sessionStorage.getItem("url-justLeft") != null){
+                var urljustLeft = sessionStorage.getItem("url-justLeft");
+                sessionStorage.setItem("url-previous", urljustLeft);
+            }
+            sessionStorage.setItem("url-justLeft", window.location.href);
+
+            if(sessionStorage.getItem("position-justLeft") != null){
+                var positionjustLeft = sessionStorage.getItem("position-justLeft");
+                sessionStorage.setItem("position-previous", positionjustLeft);
+            }
+            sessionStorage.setItem("position-justLeft", window.scrollY);
+        });
+    </script>
+</body>
+</html>
