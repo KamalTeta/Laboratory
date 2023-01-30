@@ -25,12 +25,15 @@
         var positionprevious= sessionStorage.getItem("position-previous");
         var positionjustLeft = sessionStorage.getItem("position-justLeft");
 
-        //console.log("url-previous : " + urlprevious);
-        //console.log("url-justLeft : " + urljustLeft);
-        //console.log("position-previous : " + positionprevious);
-        //console.log("position-justLeft : " + positionjustLeft);
+        
+            console.log("page loaded");
+            if(sessionStorage.getItem("url-justLeft") != null){
+                var urljustLeft = sessionStorage.getItem("url-justLeft");
+                sessionStorage.setItem("url-previous", urljustLeft);
+            }
+            sessionStorage.setItem("url-justLeft", window.location.href);
 
-        if (urlprevious == window.location.href) {
+            if (urlprevious == window.location.href) {
             window.scrollTo({
                 top: positionprevious,
                 left: 0,
@@ -38,8 +41,19 @@
             });
         }
 
+        document.querySelectorAll("a").forEach(el => {
+            el.addEventListener("click", function(e) {
+                e.preventDefault;
+                console.log("hey");
+                if(sessionStorage.getItem("position-justLeft") != null){
+                    var positionjustLeft = sessionStorage.getItem("position-justLeft");
+                    sessionStorage.setItem("position-previous", positionjustLeft);
+                }
+                sessionStorage.setItem("position-justLeft", window.scrollY);
+            });
+        });
 
-
+        /*
         window.addEventListener("beforeunload", function(event) {
             if(sessionStorage.getItem("url-justLeft") != null){
                 var urljustLeft = sessionStorage.getItem("url-justLeft");
@@ -53,6 +67,7 @@
             }
             sessionStorage.setItem("position-justLeft", window.scrollY);
         });
+        */
     </script>
 </body>
 </html>
