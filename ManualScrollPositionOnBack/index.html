@@ -5,69 +5,94 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="icon" href="data:;base64,iVBORwOKGO=" />
+    <link rel="stylesheet" href="presentationStyles.css">
 </head>
 <body>
-    <nav style="position: fixed;right:100px;">
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="page1.html">Page 1</a></li>
-            <li><a href="page1.html">Page 2</a></li>
-        </ul>
-    </nav>
-    <div style="height: 4000px;border:5px black;">
-        <h1>HALLOW</h1>
+    <div id="container">
+        <div class="slide focus" id="1">
+            <h1>Kode eksempel til Mjølner</h1><br/>
+            <p>Her kommer et eksempel på noget kode, og på hvordan jeg tackler en udfording.</p>
+            <p>Min tilgang er primært :</p>
+            <p>Undersøgelse - I løsningen og dokumentation</p>
+            <p>Sparring med kollegaer - Deling af erfaringer og rubberducking</p>
+            <p>Opsætning af simpelt testmiljø - Test uden at blive overvældet af feedback og processer, og man kan teste hurtigt</p>
+        </div>
+        <div class="slide" id="2">
+            <h2>Problemstillingen</h2><br/>
+            <p>Kunden er en stor virksomhed, og har et site med meget customization</p>
+            <p>Projektet er omkring 10 år gammelt, og dokumentationen kunne være bedre</p>
+            <p>Det er bygget på DynamicWeb og AngularJS 1.8.2</p>
+            <p>Jeg kom ind i projektet, da den tilknyttede frontender sagde op</p>
+            <p>Problemstillingen opstår når man har været inde på en listevisning, klikker in på et produkt, og så klikker tilbage</p>
+            <p>ScrollPosition bliver nemlig ikke gemt i løsningen</p>
+        </div>
+        <div class="slide" id="3">
+            <h2>Første løsningsforslag</h2><br/>
+            <p>Det første jeg fandt frem til var at bruge History.scrollRestoration</p>
+            <p>Det er en property af History interfacet som tillader javascript at lave manipulation af browser session historikken.</p>
+            <p>Jeg opdagede denne efter at have læst om hvordan browser history fungerer, og hvordan man kan arbejde med det i javascript.</p>
+            <p>Der ligger nemlig en udfordring i at man ikke kan registrere hvornår man går tilbage i browser historikken.</p>
+            <p>Man kan heller ikke se hvilke URL’er der er tilgået før eller efter den side man står på.</p>
+            <p>Kun hvor mange trin før eller efter der findes i historikken.</p>
+            <p>Manipulation af session historikken er et tricky område, hvor nogle ting er direkte umulige, da de ellers ville være sikkerhed risikoer.</p>
+            <p>Denne javascript property en måde browserne har tilladt at lade en udvikler definere om scroll restoration er slået til eller fra, da det er en meget efterspurgt funktion.</p>
+            <p>Det vil sige at det er en standard måde at gøre dette på.</p>
+            <p><a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/API/History/scrollRestoration">History: scrollRestoration property - Web APIs | MDN</a></p>
+            <h3>Fordele:</h3>
+            <p>•	Dette er en standard javascript property som virker på alle <a target="_blank" href="https://caniuse.com/mdn-api_history_scrollrestoration">moderne browsere.</a></p>
+            <p>•	Der ville være en simpel løsning med minimal opsætning.</p>
+            <h3>Hvorfor det ikke kunne bruges:</h3>
+            <p>•	Desværre kunne dette ikke bruges da det AngularJS overstyrede standard browser adfærd.</p>
+            <p>•	Muligvis på grund af noget router kontrol.</p>
+        </div>
+        <div class="slide" id="4">
+            <h2>Andet løsningsforslag</h2><br/>
+            <p>Fordi det første løsningsforslag fejlede pga. AngularJS, kunne det være en god ide at basere en løsning i AngularJS.</p>
+            <p>På den måde ville det ikke blive overstyret.</p>
+            <p>Men da AngularJS er udgået, betyder det at det er svært at finde frem til det den information man leder efter.</p>
+            <p>Der dukker eksempelvis ofte links til løsninger og dokumentation for nyere versioner af Angular.</p>
+            <p>Det lykkedes mig dog at finde nogle forslag fra StackOverflow hvor andre udviklere har efterlyst det samme.</p>
+            <h3>Fordele:</h3>
+            <p>•	Dette ville være en løsning der umiddelbart ikke ville blive overstyrret af AngularJS og det routing vi har.</p>
+            <h3>Hvorfor det ikke kunne bruges:</h3>
+            <p>•	Desværre er det ikke særlig overskueligt at finde det man leder efter, da vi skal bruge en løsning til en forældet version.</p>
+            <p>•	Jeg kunne ikke få de løsninger jeg fandt på StackOverflow til at virke i Kunde projektet.</p>
+            <p>•	Der er ikke en dedikeret metode til denne funktion i det forældede AngularJS ligesom der er i det nye Angular.</p>
+        </div>
+        <div class="slide" id="5">
+            <h2>Tredje løsningsforslag</h2><br/>
+            <p>Efter at have stødt på en mur med AngularJS drøftede jeg opgaven her med en kollega som havde lavet noget lignende på en anden DynamicWeb kunde.</p>
+            <p>I hendes kode gemmer hun scroll position manuelt på unload eventet.</p>
+            <p>Koden var dog bygget til at gemme scroll positions når man reloadede enten en produktliste eller kurven, så det ville tage noget omskrivning for at få det til virke.</p>
+            <h3>Fordele:</h3>
+            <p>•	Det ville være lækkert og tidsbesparende at kunne genbruge en løsning der er lavet.</p>
+            <p>•	Uanset hvad kan jeg bruge denne løsning som inspiration.</p>
+            <h3>Hvorfor det ikke kunne bruges:</h3>
+            <p>•	Desværre kunne dette ikke bruges da det AngularJS overstyrrede standard browser adfærd.</p>
+            <p>•	Muligvis på grund af noget router kontrol, og et custom eventqueue system.</p>
+        </div>
+        <div class="slide" id="6">
+            <h2>Nuværende løsningsforslag</h2><br/>
+            <p>Efter at have taget inspiration fra det sidste løsningsforslag, begyndte jeg fra bunden, og skrev noget javascript kode hvor man manuelt gemmer de to URL’er fra siden man står på, og den man lige har forladt.</p>
+            <p>Dette sker på unload eventet, og jeg gemmer også den sidste scroll position på de to sider.</p>
+            <p>Al informationen bliver gemt i sessionStorage, da det ikke er relevant at gemme scroll position på tværs af browser sessions.</p> 
+            <p>Og så er der ikke bøvl med GDPR - kontra hvis man havde brugt localStorage</p>
+            <p>Når man loader en side tjekker jeg om dens nuværrende URL matcher den sidste side man stod på.</p>
+            <p>Hvis den gør betyder det, at vi er gået tilbage, og så vil jeg scrolle ned til den sidste scroll position vi havde da vi forlod siden.</p>
+            <p>Derved kommer jeg forbi den udfordring som er at man ikke kan registrere at gå tilbage i browseren som et event.</p>
+            <p>Dette er faktisk den første løsning jeg har oplevet virke på Kunden!</p>
+            <h3>Fordele:</h3>
+            <p>•	Denne løsning er i vanilla javascript, så der bør ikke være udfordringer med kompabilitet.</p>
+            <p>•	Det virker på Kunden.</p>
+            <h3>Udfordringer:</h3>
+            <p>•	Produktlisten bliver populated gennem et AJAX kald, derfor skal man nok wrappe dette i en await funktion.</p>
+        </div>
     </div>
-    <script>
-        history.scrollRestoration = "manual" 
-        
-        var urlprevious = sessionStorage.getItem("url-previous");
-        var urljustLeft = sessionStorage.getItem("url-justLeft");
-        var positionprevious= sessionStorage.getItem("position-previous");
-        var positionjustLeft = sessionStorage.getItem("position-justLeft");
+    <a id="todemo" href="page1.html">Gå til demo</a>
+    <p class="arrow" id="arrowForward">→</p>
+    <p class="arrow" id="arrowBackward">←</p>
 
-        
-            console.log("page loaded");
-            if(sessionStorage.getItem("url-justLeft") != null){
-                var urljustLeft = sessionStorage.getItem("url-justLeft");
-                sessionStorage.setItem("url-previous", urljustLeft);
-            }
-            sessionStorage.setItem("url-justLeft", window.location.href);
-
-            if (urlprevious == window.location.href) {
-            window.scrollTo({
-                top: positionprevious,
-                left: 0,
-                behavior: 'smooth'
-            });
-        }
-
-        document.querySelectorAll("a").forEach(el => {
-            el.addEventListener("click", function(e) {
-                e.preventDefault;
-                console.log("hey");
-                if(sessionStorage.getItem("position-justLeft") != null){
-                    var positionjustLeft = sessionStorage.getItem("position-justLeft");
-                    sessionStorage.setItem("position-previous", positionjustLeft);
-                }
-                sessionStorage.setItem("position-justLeft", window.scrollY);
-            });
-        });
-
-        /*
-        window.addEventListener("beforeunload", function(event) {
-            if(sessionStorage.getItem("url-justLeft") != null){
-                var urljustLeft = sessionStorage.getItem("url-justLeft");
-                sessionStorage.setItem("url-previous", urljustLeft);
-            }
-            sessionStorage.setItem("url-justLeft", window.location.href);
-
-            if(sessionStorage.getItem("position-justLeft") != null){
-                var positionjustLeft = sessionStorage.getItem("position-justLeft");
-                sessionStorage.setItem("position-previous", positionjustLeft);
-            }
-            sessionStorage.setItem("position-justLeft", window.scrollY);
-        });
-        */
-    </script>
+    <script src="presentationScript.js"></script>
 </body>
 </html>

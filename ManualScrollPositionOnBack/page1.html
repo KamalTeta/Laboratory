@@ -5,70 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="demoStyles.css">
+    <link rel="icon" href="data:;base64,iVBORwOKGO=" />
 </head>
 <body>
-    <nav style="position: fixed;right:100px;">
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="#">Page 1</a></li>
-            <li><a href="page2.html">Page 2</a></li>
-        </ul>
+    <nav>
+        <a href="index.html">Præsentation</a>
+        <a href="page1.html">Side 1</a>
+        <a href="page2.html">Side 2</a>
+        <a href="page3.html">Side 3</a>
+        <button id="delBtn">Slet sessionStorage</button>
+        <button id="prtBtn">Log sessionStorage</button>
     </nav>
-    <div style="height: 4000px;border:5px black;">
-        <h1>HALLOW</h1>
+    <div id="container">
+        <div id="info">
+            <h1>Side 1</h1>
+            <h2>Scroll position : 0px</h2>
+        </div>
     </div>
-    <script>
-        history.scrollRestoration = "manual" 
-        
-        var urlprevious = sessionStorage.getItem("url-previous");
-        var urljustLeft = sessionStorage.getItem("url-justLeft");
-        var positionprevious= sessionStorage.getItem("position-previous");
-        var positionjustLeft = sessionStorage.getItem("position-justLeft");
-
-        
-            console.log("page loaded");
-            if(sessionStorage.getItem("url-justLeft") != null){
-                var urljustLeft = sessionStorage.getItem("url-justLeft");
-                sessionStorage.setItem("url-previous", urljustLeft);
-            }
-            sessionStorage.setItem("url-justLeft", window.location.href);
-
-            if (urlprevious == window.location.href) {
-            window.scrollTo({
-                top: positionprevious,
-                left: 0,
-                behavior: 'smooth'
-            });
-        }
-
-        document.querySelectorAll("a").forEach(el => {
-            el.addEventListener("click", function(e) {
-                e.preventDefault;
-                console.log("hey");
-                if(sessionStorage.getItem("position-justLeft") != null){
-                    var positionjustLeft = sessionStorage.getItem("position-justLeft");
-                    sessionStorage.setItem("position-previous", positionjustLeft);
-                }
-                sessionStorage.setItem("position-justLeft", window.scrollY);
-            });
-        });
-
-
-        /*
-        window.addEventListener("beforeunload", function(event) {
-            if(sessionStorage.getItem("url-justLeft") != null){
-                var urljustLeft = sessionStorage.getItem("url-justLeft");
-                sessionStorage.setItem("url-previous", urljustLeft);
-            }
-            sessionStorage.setItem("url-justLeft", window.location.href);
-
-            if(sessionStorage.getItem("position-justLeft") != null){
-                var positionjustLeft = sessionStorage.getItem("position-justLeft");
-                sessionStorage.setItem("position-previous", positionjustLeft);
-            }
-            sessionStorage.setItem("position-justLeft", window.scrollY);
-        });
-        */
-    </script>
+    
+    <script src="demoScript.js"></script>
 </body>
 </html>
