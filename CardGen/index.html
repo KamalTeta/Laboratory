@@ -21,9 +21,7 @@
 			top: 50%;
 			left: 50%;
 			transform: translate(-50%,-50%);
-			color:white;
 			font-family: system-ui;
-			text-shadow: 0 0 4px #000;
 			
 		}
 		#saying {
@@ -38,7 +36,6 @@
 	<div id="backgroundImage">
 		<div id="txtContainer">
 			<h1 id="saying"></h1>
-			<p id="author"></p>
 		</div>
 	</div>
 	<script>		
@@ -47,22 +44,21 @@
 		.then(data => showInfo(data));
 
 		function showInfo(data){
-			var sayings = data.Sayings;
-			var pictures = data.Pictures;
-		
-			var adjectivesCount = sayings.length - 1;
-			var picturesCount = pictures.length - 1;
+			var nouns = data.Nouns;
+			var properties = data.Properties;
+			var actions = data.Actions;
 			
 			function getRandomInt(max) {
-			return Math.floor(Math.random() * max);
+				return Math.floor(Math.random() * max);
 			}
 
-			var todaysSaying = sayings[getRandomInt(adjectivesCount)];
-			var todaysPictures = pictures[getRandomInt(picturesCount)];
+			var chosenNounBase = nouns[getRandomInt(nouns.length - 1)];
+			var chosenNoun = chosenNounBase.Words[getRandomInt(chosenNounBase.Words.length - 1)];
+			var chosenProperty = properties[getRandomInt(properties.length - 1)];
+			var chosenActionBase = actions[getRandomInt(actions.length - 1)];
+			var chosenAction = chosenActionBase.Words[getRandomInt(chosenActionBase.Words.length - 1)];
 
-			document.getElementById("backgroundImage").style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 0.33), rgba(0, 0, 0, 0.33)),url('" + todaysPictures + "')";
-			document.getElementById("saying").innerHTML += todaysSaying.quote;
-			document.getElementById("author").innerHTML += todaysSaying.author;
+			document.getElementById("saying").append(chosenAction + " " + chosenProperty.Words  + " " +chosenNoun);
 		}
 	</script>
   </body>

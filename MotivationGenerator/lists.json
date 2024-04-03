@@ -1,11 +1,11 @@
 {
     "Sayings": [
-        { "quote":"Opportunities don't happen, you create them", "author":"few" },
-        { "quote":"When we strive to become better than we are, everything around us becomes better too.", "author":"wef" },
-        { "quote":"Alone we can do so little, together we can do so much.", "author":"fwe" },
+        { "quote":"Opportunities don't happen, <br/>you create them", "author":"few" },
+        { "quote":"When we strive to become better than we are, <br/>everything around us becomes better too.", "author":"wef" },
+        { "quote":"Alone we can do so little, <br/>together we can do so much.", "author":"fwe" },
         { "quote":"Either you run the day or the day runs you.", "author":"wef" },
-        { "quote":"Keep your eyes on the stars, and your feet on the ground.", "author":"wef" },
-        { "quote":"Inspiration does exist, but it must find you working.", "author":"few" }        
+        { "quote":"Keep your eyes on the stars, <br/>and your feet on the ground.", "author":"wef" },
+        { "quote":"Inspiration does exist, <br/>but it must find you working.", "author":"few" }        
     ],
     "Pictures": [
         "media/adrian-enache-0IsVTerMwzQ-unsplash_1620x1080.png",

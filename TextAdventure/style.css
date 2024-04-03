@@ -11,10 +11,11 @@ body {
     width: 100vw;
     height: 100vh;
     background: #d3d3d3;
+    font-size: 32px;
 }
 
 .container {
-    width: 80%;
+    width: 50%;
     background: #fff;
     padding: 10px;
     border-radius: 5px;
@@ -29,6 +30,7 @@ body {
 
 .btn {
     padding:5px 10px;
+    font-size: 32px;
 }
 
 .btn:hover {

@@ -1,0 +1,25 @@
+{
+    "Nouns": [
+        { "Base":"Creature", "Effect":"few", "Words":["Civillian", "Dude", "Sheep", "Cat", "Dragon"] },
+        { "Base":"Object", "Effect":"wef", "Words":["Orb", "Staff", "Chair", "Cart"] },
+        { "Base":"Element", "Effect":"fwe", "Words":["Fire","Lightning","Water","Goop"] }
+    ],
+    "Properties": [
+        { "Words":"Large", "Effect":"few" },
+        { "Words":"Powerful", "Effect":"wef" },
+        { "Words":"Weak", "Effect":"fwe" },
+        { "Words":"Strange", "Effect":"wef" },
+        { "Words":"Green", "Effect":"wef" },
+        { "Words":"Eager", "Effect":"few" }        
+    ],
+    "Actions": [
+        { "Base":"Add", "Effect":"Make something", "Words":["Create","Summon","Craft","Manifest","Make"] },
+        { "Base":"Remove", "Effect":"Remove something", "Words":["Destroy","Banish","Remove"] },
+        { "Base":"Add to", "Effect":"Give property to", "Words":["Enchant","Bewitch","Bestow","Afflict","Curse"] },
+        { "Base":"Change", "Effect":"Make nature/properties/effect of target different", "Words":["Transform","Enlarge","Reduce","Enrage","Disarm"] },
+        { "Base":"Remove from", "Effect":"Remove property", "Words":["Should this be a word or an add to modifier"] },
+        { "Base":"Move", "Effect":"Interact with object", "Words":["Push","Pull","Lift","Shove"] },
+        { "Base":"Harm", "Effect":"Costs health", "Words":["Painful","Damaging","Excruciating"] },
+        { "Base":"Heal", "Effect":"Adds health", "Words":["Soothing"] }
+    ]
+}
